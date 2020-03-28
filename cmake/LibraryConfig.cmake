@@ -19,6 +19,8 @@ endif()
 
 # Target
 add_library(${LIBRARY_NAME} ${LIBRARY_TYPE} ${SOURCES} ${HEADERS})
+target_include_directories(${LIBRARY_NAME} PUBLIC ${DEP_INCLUDE_DIRS})
+target_link_libraries(${LIBRARY_NAME} ${DEP_LIBS})
 
 # Install library
 install(TARGETS ${LIBRARY_NAME}
